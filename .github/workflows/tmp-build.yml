@@ -1,0 +1,25 @@
+name: tmp build hostinger
+on:
+  push:
+    branches: [tmp-build]
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npm run build
+        env:
+          BASE_PATH: /
+      - name: push dist
+        run: |
+          cd dist
+          git init -q -b tmp-dist
+          git config user.name ci; git config user.email ci@local
+          git add -A; git commit -qm dist
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" tmp-dist
