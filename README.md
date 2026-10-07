@@ -15,17 +15,18 @@ npm run build     # gera a pasta dist/ pronta para publicar
 npm run preview   # testa o build localmente
 ```
 
-## Publicar (Hostinger)
+## Publicar no GitHub Pages
 
-A cada push na `main`, o GitHub Actions faz o build e envia a pasta `dist/` por FTP para a Hostinger
-(workflow `.github/workflows/hostinger.yml`).
+1. Suba estes arquivos para a branch `main` do repositório.
+2. No GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+3. Pronto: a cada push na `main`, o workflow `.github/workflows/deploy.yml` faz o build e publica.
+   Acompanhe na aba **Actions**.
 
-Segredos necessários em Settings → Secrets and variables → Actions:
-`FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`. Pasta de destino opcional na variável `FTP_DIR`
-(padrão `public_html/`).
-
-Sem FTP: baixe o artefato **site-pronto** da última execução em Actions e envie o conteúdo
-para `public_html` pelo Gerenciador de Arquivos da Hostinger.
+O caminho do site é ajustado sozinho:
+- `usuario.github.io/nome-do-repo` → funciona direto.
+- **Domínio próprio** (ex.: `studiobarto.com.br`): em Settings → Pages → Custom domain, informe o domínio
+  e configure o DNS (registro CNAME apontando para `usuario.github.io`). Depois rode o workflow de novo
+  (Actions → Deploy no GitHub Pages → Run workflow).
 
 ## Onde editar
 
