@@ -110,9 +110,10 @@ export function Hero({ ready }: { ready: boolean }) {
 
         <div className="h-inside absolute inset-0 opacity-0">
           <img
-            src={`${import.meta.env.BASE_URL}images/team/nicolas-1.webp`}
+            src={`${import.meta.env.BASE_URL}images/team/vinny-estudio.webp`}
             alt=""
             className="h-full w-full object-cover blur-[2px]"
+            style={{ objectPosition: "50% 45%" }}
           />
           <div className="absolute inset-0 bg-carvao/70" />
         </div>

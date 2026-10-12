@@ -5,9 +5,9 @@ import { scrollToId } from "./scroll";
 import { CONTACT } from "./config";
 
 const LINKS = [
-  { id: "barbearia", label: "Barbearia" },
   { id: "tatuagem", label: "Tatuagem" },
   { id: "laser", label: "Laser & Peeling" },
+  { id: "barbearia", label: "Barbearia" },
   { id: "profissionais", label: "Equipe" },
   { id: "contato", label: "Contato" },
 ];

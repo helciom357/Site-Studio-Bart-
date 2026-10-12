@@ -68,9 +68,9 @@ export function Site() {
       <Header />
       <main>
         <Hero ready={ready} />
-        <BarberSection />
         <TattooSection />
         <LaserSection />
+        <BarberSection />
         <QuoteForm />
       </main>
       <Footer />

@@ -3,6 +3,7 @@ import { MesaFixa, type MesaObject } from "../MesaFixa";
 import { ICONS, Marquee } from "../Marquee";
 import { LASER_CARE, LASER_REMOVAL, PEELING } from "../content";
 import { SectionTitle, requestService } from "../ui";
+import { scrollToId } from "../scroll";
 
 const M = `${import.meta.env.BASE_URL}images/mesas`;
 
@@ -369,7 +370,7 @@ export function LaserSection() {
       />
       <MesaFixa
         id="mesa-laser"
-        eyebrow="03 — Laser & Peeling Hollywood"
+        eyebrow="02 — Laser & Peeling Hollywood"
         title={
           <>
             A mesa do <em className="text-areia">laser.</em>
@@ -394,6 +395,15 @@ export function LaserSection() {
       <Removal />
       <Peeling />
       <Care />
+      <div className="flex justify-center bg-verde pb-20">
+        <button
+          onClick={() => scrollToId("barbearia")}
+          className="eyebrow flex flex-col items-center gap-3 text-creme/70 transition hover:text-creme"
+        >
+          Próxima mesa: Barbearia
+          <span className="block h-10 w-px bg-creme/50" />
+        </button>
+      </div>
     </div>
   );
 }

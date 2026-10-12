@@ -31,7 +31,7 @@ const objects: MesaObject[] = [
     label: "Tintas",
     title: "Fotos e vídeos",
     description:
-      "Fotos e vídeos de tatuagens feitas no estúdio. Black & Gray, fechamentos e cor que não desbota.",
+      "Fotos e vídeos de tatuagens feitas no estúdio: preto e cinza, fechamentos, colorido, comics e muito mais.",
     target: "portfolio",
     icon: "ink",
     pin: [944, 262],
@@ -251,7 +251,7 @@ function Styles() {
               key={s.name}
               onClick={() => setActive(i)}
               onMouseEnter={() => setActive(i)}
-              className="group flex w-[calc((100%-2rem)/3)] flex-col items-center gap-3 sm:w-[calc((100%-3rem)/3)]"
+              className="group flex w-[calc((100%-2rem)/3)] flex-col items-center gap-3 sm:w-[calc((100%-4.5rem)/4)]"
               aria-pressed={active === i}
             >
               <span
@@ -288,13 +288,13 @@ export function TattooSection() {
     <div id="tatuagem">
       <Marquee
         icons={["machine", "ink", "caps", "needle", "rose"]}
-        words={["Tatuagem", "Black & Gray", "Fechamentos", "Full Color", "Realismo"]}
+        words={["Tatuagem", "Preto e Cinza", "Fechamento", "Colorido", "Fine Line"]}
         color="#efe8dc"
         bg="#9a4729"
       />
       <MesaFixa
         id="mesa-tatuagem"
-        eyebrow="02 — Estúdio de tatuagem"
+        eyebrow="01 — Estúdio de tatuagem"
         title={
           <>
             A mesa do <em className="text-cobre">tatuador.</em>

@@ -207,11 +207,11 @@ export function BarberSection() {
         icons={["clipper", "scissors", "dryer", "razor", "comb", "pole", "brush"]}
         words={["Barbearia", "Fade", "Tesoura", "Navalha", "Barboterapia", "Sobrancelha", "Barba"]}
         color="#efe8dc"
-        bg="#5f725a"
+        bg="#252622"
       />
       <MesaFixa
         id="mesa-barbearia"
-        eyebrow="01 — Barbearia"
+        eyebrow="03 — Barbearia"
         title={
           <>
             A bancada do <em className="text-areia">barbeiro.</em>
@@ -247,10 +247,10 @@ export function BarberSection() {
       <Team />
       <div className="flex justify-center bg-musgo pb-20">
         <button
-          onClick={() => scrollToId("tatuagem")}
+          onClick={() => scrollToId("agendar")}
           className="eyebrow flex flex-col items-center gap-3 text-creme/70 transition hover:text-creme"
         >
-          Próxima mesa: Tatuagem
+          Agende seu horário
           <span className="block h-10 w-px bg-creme/50" />
         </button>
       </div>

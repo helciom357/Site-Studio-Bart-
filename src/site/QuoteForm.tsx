@@ -13,12 +13,6 @@ const SERVICES: { key: ServiceKey; label: string; icon: string; text: string }[]
     text: "Projeto autoral, orçamento sem compromisso.",
   },
   {
-    key: "barbearia",
-    label: "Barbearia",
-    icon: "scissors",
-    text: "Corte, barba, sobrancelha e barboterapia.",
-  },
-  {
     key: "remocao",
     label: "Remoção a laser",
     icon: "laser",
@@ -29,6 +23,12 @@ const SERVICES: { key: ServiceKey; label: string; icon: string; text: string }[]
     label: "Peeling Hollywood",
     icon: "sparkle",
     text: "Pele limpa, uniforme e com glow.",
+  },
+  {
+    key: "barbearia",
+    label: "Barbearia",
+    icon: "scissors",
+    text: "Corte, barba, sobrancelha e barboterapia.",
   },
 ];
 
@@ -400,7 +400,7 @@ export function QuoteForm() {
                       name="tat_estilo"
                       value={a["tat_estilo"]}
                       onChange={set("tat_estilo")}
-                      options={[...TATTOO_STYLES.map((s) => s.name), "Neo Traditional", "Não sei ainda"]}
+                      options={[...TATTOO_STYLES.map((s) => s.name), "Não sei ainda"]}
                     />
                   </Q>
                   <Q n={4} title="Conte sua ideia" hint="Opcional — referências ajudam muito.">

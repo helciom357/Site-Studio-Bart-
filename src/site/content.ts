@@ -24,7 +24,7 @@ export const TATTOO_ARTIST: Professional = {
   highlights: [
     {
       title: "Passagem por estúdios em Los Angeles",
-      text: "Capital mundial do realismo e Black & Gray",
+      text: "Capital mundial do preto e cinza",
     },
     {
       title: "Experiência em estúdios na Suíça",
@@ -76,60 +76,76 @@ export const TATTOO_STATS = [
   { value: "+3", label: "países com experiência" },
 ];
 
-// Frames dos vídeos do estúdio, equilibrados por estilo (3 por estilo; Full Color e Geek com 2).
+// Frames dos vídeos do estúdio, rotulados com os estilos do Vinny.
 export const PORTFOLIO = [
   { src: `${import.meta.env.BASE_URL}images/tattoo/gladiador.webp`, title: "Gladiador", style: "Fechamento" },
-  { src: `${import.meta.env.BASE_URL}images/tattoo/carpa-samurai.webp`, title: "Carpa e samurai", style: "Full Color" },
+  { src: `${import.meta.env.BASE_URL}images/tattoo/carpa-samurai.webp`, title: "Carpa e samurai", style: "Colorido" },
   { src: `${import.meta.env.BASE_URL}images/tattoo/tigre-mandala.webp`, title: "Tigre e mandala", style: "Fine Line" },
   { src: `${import.meta.env.BASE_URL}images/tattoo/magneto.webp`, title: "Magneto", style: "Comics" },
   { src: `${import.meta.env.BASE_URL}images/tattoo/dama-vendada.webp`, title: "Dama vendada", style: "Preto e Cinza" },
   { src: `${import.meta.env.BASE_URL}images/tattoo/flores.webp`, title: "Flores", style: "Floral" },
   { src: `${import.meta.env.BASE_URL}images/tattoo/itachi.webp`, title: "Itachi", style: "Geek" },
-  { src: `${import.meta.env.BASE_URL}images/tattoo/braco-lettering.webp`, title: "Braço escrito", style: "Lettering" },
-  { src: `${import.meta.env.BASE_URL}images/tattoo/mao-e-flores.webp`, title: "Mão e flores", style: "Feminina" },
+  { src: `${import.meta.env.BASE_URL}images/tattoo/braco-lettering.webp`, title: "Braço escrito", style: "Fechamento" },
+  { src: `${import.meta.env.BASE_URL}images/tattoo/mao-e-flores.webp`, title: "Mão e flores", style: "Feminino" },
   { src: `${import.meta.env.BASE_URL}images/tattoo/lobos.webp`, title: "Lobos", style: "Fechamento" },
-  { src: `${import.meta.env.BASE_URL}images/tattoo/retrato-colorido.webp`, title: "Retrato colorido", style: "Full Color" },
+  { src: `${import.meta.env.BASE_URL}images/tattoo/retrato-colorido.webp`, title: "Retrato colorido", style: "Colorido" },
   { src: `${import.meta.env.BASE_URL}images/tattoo/sol-e-lua.webp`, title: "Sol e lua", style: "Fine Line" },
   { src: `${import.meta.env.BASE_URL}images/tattoo/coringa.webp`, title: "Coringa", style: "Comics" },
   { src: `${import.meta.env.BASE_URL}images/tattoo/cocar.webp`, title: "Cocar", style: "Preto e Cinza" },
   { src: `${import.meta.env.BASE_URL}images/tattoo/onca-costas.webp`, title: "Onça nas costas", style: "Floral" },
   { src: `${import.meta.env.BASE_URL}images/tattoo/aldebaran.webp`, title: "Aldebaran", style: "Geek" },
-  { src: `${import.meta.env.BASE_URL}images/tattoo/pra-quem-tem-fe.webp`, title: "Pra quem tem fé", style: "Lettering" },
-  { src: `${import.meta.env.BASE_URL}images/tattoo/leao-e-rosas.webp`, title: "Leão e rosas", style: "Feminina" },
+  { src: `${import.meta.env.BASE_URL}images/tattoo/pra-quem-tem-fe.webp`, title: "Pra quem tem fé", style: "Preto e Cinza" },
+  { src: `${import.meta.env.BASE_URL}images/tattoo/leao-e-rosas.webp`, title: "Leão e rosas", style: "Feminino" },
   { src: `${import.meta.env.BASE_URL}images/tattoo/leao.webp`, title: "Leão", style: "Fechamento" },
   { src: `${import.meta.env.BASE_URL}images/tattoo/onca-florida.webp`, title: "Onça florida", style: "Fine Line" },
   { src: `${import.meta.env.BASE_URL}images/tattoo/hera-venenosa.webp`, title: "Hera Venenosa", style: "Comics" },
   { src: `${import.meta.env.BASE_URL}images/tattoo/cristo-e-leao.webp`, title: "Cristo e leão", style: "Preto e Cinza" },
   { src: `${import.meta.env.BASE_URL}images/tattoo/ramo-pulso.webp`, title: "Ramo no pulso", style: "Floral" },
-  { src: `${import.meta.env.BASE_URL}images/tattoo/frase-e-flores.webp`, title: "Frase e flores", style: "Lettering" },
-  { src: `${import.meta.env.BASE_URL}images/tattoo/borboletas.webp`, title: "Borboletas", style: "Feminina" },
+  { src: `${import.meta.env.BASE_URL}images/tattoo/borboletas.webp`, title: "Borboletas", style: "Feminino" },
+  { src: `${import.meta.env.BASE_URL}images/tattoo/frase-e-flores.webp`, title: "Frase e flores", style: "Floral" },
 ];
 
+// Estilos do Vinny Darian, na ordem que ele passou.
 export const TATTOO_STYLES = [
   {
-    name: "Black & Gray",
+    name: "Comics",
+    color: "#c0873a",
+    text: "Heróis, vilões e quadrinhos na pele, com traço marcado, contraste forte e muita personalidade.",
+  },
+  {
+    name: "Fechamento",
+    color: "#334238",
+    text: "Braço, perna, peito, costas — projetos de composição que exigem visão do conjunto, em sessões longas e resultado coeso.",
+  },
+  {
+    name: "Preto e Cinza",
     color: "#252622",
-    text: "A especialidade da casa. Transições de preto profundo para pele limpa que parecem fotografia.",
+    text: "Transições suaves de preto profundo para pele limpa, com volume e luz que parecem fotografia.",
   },
   {
-    name: "Realismo",
-    color: "#5f725a",
-    text: "Retratos, animais e cenas com volume, luz e textura fiéis à referência.",
-  },
-  {
-    name: "Full Color",
+    name: "Colorido",
     color: "#9a4729",
     text: "Saturação que não desbota em dois anos. Exige domínio de pigmento, camadas e cicatrização.",
-  },
-  {
-    name: "Fechamentos",
-    color: "#334238",
-    text: "Manga, meia-manga, peito, costas — projetos de composição que exigem visão do conjunto.",
   },
   {
     name: "Fine Line",
     color: "#8a8f86",
     text: "Traço fino e delicado, ideal para peças menores, escritas e detalhes minimalistas.",
+  },
+  {
+    name: "Geek",
+    color: "#3f5866",
+    text: "Animes, games, filmes e séries. Personagens e referências da cultura pop, fiéis ao original.",
+  },
+  {
+    name: "Feminino",
+    color: "#b4837a",
+    text: "Peças delicadas e elegantes que valorizam o corpo: borboletas, flores, mãos e composições leves.",
+  },
+  {
+    name: "Floral",
+    color: "#5f725a",
+    text: "Rosas, peônias e ramos — do traço fino ao preto e cinza, com composição que acompanha o corpo.",
   },
 ];
 

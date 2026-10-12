@@ -430,7 +430,7 @@ export function Loader({ onReveal, onDone }: { onReveal: () => void; onDone: () 
         </svg>
       </div>
       <div className="l-meta pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between p-5 text-creme/70 md:p-8">
-        <span className="eyebrow">Barber · Tattoo · Laser</span>
+        <span className="eyebrow">Tattoo · Laser · Barber</span>
         <span ref={num} className="display text-5xl tabular-nums text-creme md:text-7xl">
           000
         </span>
