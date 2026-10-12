@@ -18,8 +18,8 @@ export const TATTOO_ARTIST: Professional = {
   facts: ["+20 anos de profissão", "+520 clientes", "3 países"],
   photos: [`${import.meta.env.BASE_URL}images/team/vinny-1.webp`, `${import.meta.env.BASE_URL}images/team/vinny-2.webp`, `${import.meta.env.BASE_URL}images/team/vinny-3.webp`],
   bio: [
-    "Vinny Darian é o artista à frente do Estúdio Bartô Tattoo. Com anos de experiência no Brasil e no exterior — incluindo passagens por estúdios da Suíça e Los Angeles — ele desenvolveu um estilo técnico, preciso e altamente detalhado, com foco em Black & Gray.",
-    "Especialista em fechamentos e projetos grandes em sessão única (8 a 10 horas), Vinny acumula premiações em convenções de tatuagem que reforçam seu domínio técnico e a qualidade do seu trabalho. Além do Black & Gray, também atua em estilos como Blackwork, Fine Line e Neo Traditional, sempre criando projetos personalizados para cada cliente.",
+    "Vinny Darian é o artista à frente do Estúdio Bartô Tattoo. Com mais de 20 anos de experiência no Brasil e no exterior, trabalha com Comics, Fechamento, Preto e Cinza, Colorido, Fine Line, Geek, Feminino e Floral — sempre com projetos personalizados para cada cliente.",
+    "Com passagens por estúdios da Suíça e de Los Angeles, desenvolveu um traço técnico, preciso e altamente detalhado. Especialista em fechamentos e projetos grandes em sessão única (8 a 10 horas), Vinny acumula premiações em convenções de tatuagem que reforçam seu domínio técnico e a qualidade do seu trabalho.",
   ],
   highlights: [
     {
@@ -131,11 +131,6 @@ export const TATTOO_STYLES = [
     color: "#8a8f86",
     text: "Traço fino e delicado, ideal para peças menores, escritas e detalhes minimalistas.",
   },
-  {
-    name: "Blackwork",
-    color: "#111210",
-    text: "Áreas sólidas de preto, padrões e geometria. Impacto visual forte e duradouro.",
-  },
 ];
 
 export const TATTOO_PROCESS = [
@@ -154,34 +149,6 @@ export const TATTOO_PROCESS = [
   {
     title: "Cuidado",
     text: "Protocolo completo de pós-tatuagem e acompanhamento da cicatrização.",
-  },
-];
-
-export const AFTERCARE = [
-  {
-    time: "0–24h",
-    title: "Mantenha o filme",
-    text: "O insulfilme (ou segunda pele) protege a tatuagem nas primeiras horas. Retire no tempo indicado pelo tatuador.",
-  },
-  {
-    time: "Diário",
-    title: "Lave com cuidado",
-    text: "Água morna e sabonete neutro, com as mãos limpas. Seque com papel toalha, sem esfregar.",
-  },
-  {
-    time: "3x ao dia",
-    title: "Hidrate na medida",
-    text: "Uma camada fina da pomada indicada. Excesso abafa a pele e atrapalha a cicatrização.",
-  },
-  {
-    time: "15–30 dias",
-    title: "Proteja",
-    text: "Nada de sol, piscina, mar ou sauna. Não coce e não arranque as casquinhas.",
-  },
-  {
-    time: "Para sempre",
-    title: "Protetor solar",
-    text: "Depois de cicatrizada, protetor solar sempre. É ele que mantém o traço e a cor vivos por anos.",
   },
 ];
 

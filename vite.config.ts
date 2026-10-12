@@ -8,7 +8,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 //   - usuario.github.io/nome-do-repo                                  → "/nome-do-repo/"
 // O workflow do GitHub Pages preenche isso automaticamente.
 export default defineConfig({
-  base: process.env.BASE_PATH || "/",
+  base: process.env["BASE_PATH"] || "/",
   plugins: [react(), tailwindcss(), tsconfigPaths()],
   resolve: {
     dedupe: ["react", "react-dom"],

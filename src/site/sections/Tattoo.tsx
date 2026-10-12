@@ -1,10 +1,7 @@
-import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useState } from "react";
 import { MesaFixa, type MesaObject } from "../MesaFixa";
 import { Marquee } from "../Marquee";
 import {
-  AFTERCARE,
   PORTFOLIO,
   TATTOO_ARTIST,
   TATTOO_PROCESS,
@@ -21,10 +18,10 @@ const objects: MesaObject[] = [
   {
     key: "insulfilme",
     label: "Insulfilme",
-    title: "Cuidados pós-tatuagem",
+    title: "O tatuador",
     description:
-      "A tatuagem termina na cicatrização. Veja o passo a passo para manter o traço e a cor por anos.",
-    target: "cuidados",
+      "Conheça Vinny Darian: mais de 20 anos de tatuagem entre São Paulo, Suíça e Los Angeles.",
+    target: "tatuador",
     icon: "rose",
     pin: [513, 430],
     pieces: [{ src: `${M}/obj-tatuagem-rolo.webp`, x: 431, y: 177, w: 165, h: 588 }],
@@ -209,63 +206,6 @@ function Artist() {
   );
 }
 
-function Aftercare() {
-  const root = useRef<HTMLElement>(null);
-  useEffect(() => {
-    const el = root.current;
-    if (!el) return;
-    gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        ".ac-line",
-        { scaleX: 0 },
-        {
-          scaleX: 1,
-          ease: "none",
-          scrollTrigger: { trigger: ".ac-list", start: "top 75%", end: "bottom 60%", scrub: true },
-        },
-      );
-    }, el);
-    return () => ctx.revert();
-  }, []);
-  return (
-    <section
-      id="cuidados"
-      ref={root}
-      className="relative overflow-hidden bg-creme px-4 py-28 text-carvao md:px-8 md:py-36"
-    >
-      <div className="mx-auto max-w-[1400px]">
-        <SectionTitle
-          tone="dark"
-          eyebrow="Pós-tatuagem"
-          title={
-            <>
-              A tatuagem termina <em className="text-cobre">na cicatrização.</em>
-            </>
-          }
-          text="Siga o protocolo e a sua arte fica nítida por anos. Em caso de dúvida, chame a gente no WhatsApp — o acompanhamento faz parte do serviço."
-        />
-        <div className="ac-list relative mt-16">
-          <div className="absolute left-0 right-0 top-[22px] hidden h-px bg-carvao/15 md:block" />
-          <div className="ac-line absolute left-0 right-0 top-[22px] hidden h-px origin-left bg-cobre md:block" />
-          <ol className="grid gap-10 md:grid-cols-5 md:gap-6">
-            {AFTERCARE.map((a, i) => (
-              <li key={a.title} data-reveal className="relative">
-                <span className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full bg-verde text-sm font-bold text-creme ring-8 ring-creme">
-                  {i + 1}
-                </span>
-                <p className="eyebrow mt-6 text-cobre">{a.time}</p>
-                <h3 className="display mt-2 text-3xl">{a.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-carvao/70">{a.text}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Styles() {
   const [active, setActive] = useState(0);
   const style = TATTOO_STYLES[active];
@@ -305,13 +245,13 @@ function Styles() {
             </div>
           )}
         </div>
-        <div className="grid grid-cols-3 gap-4 sm:gap-6">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
           {TATTOO_STYLES.map((s, i) => (
             <button
               key={s.name}
               onClick={() => setActive(i)}
               onMouseEnter={() => setActive(i)}
-              className="group flex flex-col items-center gap-3"
+              className="group flex w-[calc((100%-2rem)/3)] flex-col items-center gap-3 sm:w-[calc((100%-3rem)/3)]"
               aria-pressed={active === i}
             >
               <span
@@ -371,7 +311,7 @@ export function TattooSection() {
       />
       <Marquee
         icons={["ink", "rose", "machine", "caps", "needle"]}
-        words={["Orçamento", "Portfólio", "Cuidados", "Estilos", "Vinny Darian"]}
+        words={["Orçamento", "Portfólio", "Vinny Darian", "Estilos"]}
         color="#252622"
         bg="#d8ccb6"
         reverse
@@ -379,7 +319,6 @@ export function TattooSection() {
       <Quote />
       <Portfolio />
       <Artist />
-      <Aftercare />
       <Styles />
       <div className="flex justify-center bg-musgo pb-20">
         <button
