@@ -28,7 +28,7 @@ const SERVICES: { key: ServiceKey; label: string; icon: string; text: string }[]
     key: "barbearia",
     label: "Barbearia",
     icon: "scissors",
-    text: "Corte, barba, sobrancelha e barboterapia.",
+    text: "Corte, barba, coloração, tratamentos e sobrancelha.",
   },
 ];
 
@@ -428,11 +428,13 @@ export function QuoteForm() {
                       value={a["barb_servicos"]}
                       onChange={set("barb_servicos")}
                       options={[
-                        "Corte na tesoura",
-                        "Corte na máquina",
-                        "Barba",
+                        "Corte masculino",
+                        "Máquina geral",
+                        "Barbear tradicional",
+                        "Coloração, luzes ou platinado",
+                        "Hidratação ou escova",
                         "Sobrancelha",
-                        "Barboterapia",
+                        "Depilação (nariz ou orelhas)",
                       ]}
                     />
                   </Q>

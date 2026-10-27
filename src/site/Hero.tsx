@@ -14,7 +14,7 @@ const START_Y = 0.08; // no início, a placa da barbearia aparece no painel de b
 const TOP = "58%"; // altura do painel Tattoo & laser (produto principal)
 
 const TATTOO_TAGS = ["Tatuagem", "Remoção a laser", "Peeling Hollywood"];
-const BARBER_TAGS = ["Corte", "Barba", "Sobrancelha", "Barboterapia"];
+const BARBER_TAGS = ["Corte", "Barba", "Coloração", "Sobrancelha"];
 const WALL = ["gladiador", "carpa-samurai", "lobos"].map(
   (n) => `${import.meta.env.BASE_URL}images/tattoo/${n}.webp`,
 );

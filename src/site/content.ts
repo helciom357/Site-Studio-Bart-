@@ -174,27 +174,81 @@ export const HAIRCUT_PHOTOS = Array.from(
   (_, i) => `${import.meta.env.BASE_URL}images/cortes/corte-${String(i + 1).padStart(2, "0")}.webp`,
 );
 
-export const BARBER_SERVICES = [
+// Tabela oficial da barbearia (sistema de agendamento do Bartô, out/2026).
+// `from: true` mostra "a partir de" antes do valor.
+export type BarberService = { name: string; desc: string; price: string; from?: boolean };
+
+export const BARBER_SERVICE_GROUPS: { title: string; items: BarberService[] }[] = [
   {
-    name: "Corte na tesoura",
-    desc: "Acabamento clássico, textura e caimento natural.",
-    price: "R$ 70",
-    time: "45 min",
+    title: "Cabelo",
+    items: [
+      { name: "Corte masculino", desc: "Corte com higienização e secagem.", price: "R$ 85" },
+      { name: "Máquina geral", desc: "Corte de cabelo com um único pente da máquina.", price: "R$ 60" },
+      { name: "Acabamento (pezinho)", desc: "Acabamento do corte de cabelo.", price: "R$ 20" },
+      { name: "Corte + sobrancelha", desc: "Corte de cabelo e sobrancelha.", price: "R$ 100" },
+      { name: "Corte e barba", desc: "Corte clássico + barbear tradicional.", price: "R$ 155" },
+      {
+        name: "Hidratação + corte de cabelo",
+        desc: "Repõe a umidade dos fios, previne danos e deixa o cabelo macio, brilhante e fácil de pentear.",
+        price: "R$ 135",
+      },
+      {
+        name: "Hidratação simples",
+        desc: "Repõe a umidade e combate o ressecamento de cabelos ondulados, cacheados, crespos e lisos. Máscaras com D-Pantenol, óleo de oliva, óleo de rícino e manteiga de karité.",
+        price: "R$ 50",
+      },
+      { name: "Aplicação de coloração", desc: "Aplicação de tinta e coloração.", price: "R$ 50", from: true },
+      {
+        name: "Corte + luzes",
+        desc: "Técnica parecida com o reflexo, com mechas coloridas bem mais fininhas.",
+        price: "R$ 260",
+      },
+      {
+        name: "Corte + platinado",
+        desc: "Fios descoloridos até um tom bem claro, quase branco ou cinza. Visual ousado que pede hidratação e matização para manter a cor.",
+        price: "R$ 380",
+      },
+      {
+        name: "Decapagem / descoloração",
+        desc: "Remove toda a cor do cabelo, seja a natural ou a de uma coloração.",
+        price: "R$ 100",
+      },
+      { name: "Escova botox", desc: "Botox capilar: alisa e dá brilho aos fios.", price: "R$ 120", from: true },
+      {
+        name: "Escova progressiva",
+        desc: "Para cabelo ondulado e volumoso. Deixa os fios lisos, brilhantes e com movimento; refazer a cada três meses.",
+        price: "R$ 120",
+        from: true,
+      },
+    ],
   },
   {
-    name: "Corte na máquina",
-    desc: "Degradês, fades e laterais precisas.",
-    price: "R$ 55",
-    time: "40 min",
+    title: "Barba e bigode",
+    items: [
+      {
+        name: "Barbear tradicional",
+        desc: "Assepsia com sabonete antisséptico e creme de barbear, barba na navalha (lâminas descartáveis) e pós-barba.",
+        price: "R$ 85",
+      },
+      {
+        name: "Máquina geral e barba",
+        desc: "Corte com um único pente da máquina e barba completa.",
+        price: "R$ 140",
+      },
+      {
+        name: "Cabelo + barba + sobrancelha",
+        desc: "Corte, lavagem e penteado, barbear tradicional caprichado na navalha, toalhas quentes e cremes especiais.",
+        price: "R$ 170",
+      },
+    ],
   },
-  { name: "Barba", desc: "Toalha quente, navalha e finalização.", price: "R$ 50", time: "30 min" },
-  { name: "Corte + barba", desc: "O combo completo da casa.", price: "R$ 110", time: "75 min" },
-  { name: "Sobrancelha", desc: "Alinhamento na navalha ou pinça.", price: "R$ 25", time: "15 min" },
   {
-    name: "Barboterapia",
-    desc: "Ritual com vapor, esfoliação, óleos e massagem facial.",
-    price: "R$ 80",
-    time: "45 min",
+    title: "Sobrancelha e depilação",
+    items: [
+      { name: "Sobrancelha", desc: "Alinhamento da sobrancelha.", price: "R$ 20" },
+      { name: "Depilação masculina — nariz", desc: "Remoção dos pelos do nariz.", price: "R$ 20" },
+      { name: "Depilação masculina — orelhas", desc: "Remoção dos pelos das orelhas.", price: "R$ 20" },
+    ],
   },
 ];
 

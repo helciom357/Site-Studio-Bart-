@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MesaFixa, type MesaObject } from "../MesaFixa";
 import { Marquee } from "../Marquee";
-import { BARBERS, BARBER_SERVICES, HAIRCUT_PHOTOS } from "../content";
+import { BARBERS, BARBER_SERVICE_GROUPS, HAIRCUT_PHOTOS } from "../content";
 import { Lightbox, ProfessionalCard, RipeCarousel, SectionTitle, requestService } from "../ui";
 import { scrollToId } from "../scroll";
 
@@ -35,7 +35,7 @@ const objects: MesaObject[] = [
     label: "Tesoura",
     title: "Serviços",
     description:
-      "Corte na tesoura, na máquina, barba, sobrancelha e barboterapia. Escolha o seu ritual.",
+      "Cortes, barba, coloração, hidratação, escovas, sobrancelha e combos. Veja a tabela de valores.",
     target: "servicos",
     icon: "scissors",
     pin: [1150, 338],
@@ -127,51 +127,58 @@ function Services() {
         <div className="md:sticky md:top-28 md:self-start">
           <SectionTitle
             tone="dark"
-            eyebrow="Serviços"
+            eyebrow="Serviços e valores"
             title={
               <>
                 Escolha <em className="text-cobre">o seu ritual.</em>
               </>
             }
-            text="Valores ilustrativos — a tabela oficial entra em breve."
+            text="Tabela da barbearia. Toque em um serviço para agendar."
           />
           <button onClick={() => requestService("barbearia")} className="btn btn-cobre mt-10">
             Agendar horário →
           </button>
         </div>
-        <ul className="border-t border-carvao/15">
-          {BARBER_SERVICES.map((s, i) => (
-            <li key={s.name} data-reveal>
-              <button
-                onClick={() => requestService("barbearia")}
-                className="group relative flex w-full items-center justify-between gap-6 overflow-hidden border-b border-carvao/15 py-7 text-left"
-              >
-                <span className="absolute inset-0 origin-bottom scale-y-0 bg-verde transition-transform duration-500 ease-out group-hover:scale-y-100" />
-                <span className="relative flex items-baseline gap-5 transition-transform duration-500 group-hover:translate-x-4">
-                  <span className="text-xs font-bold text-cobre transition group-hover:text-creme">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span>
-                    <span className="display block text-3xl transition group-hover:text-creme md:text-4xl">
-                      {s.name}
-                    </span>
-                    <span className="mt-1 block text-sm text-carvao/60 transition group-hover:text-creme/80">
-                      {s.desc}
-                    </span>
-                  </span>
-                </span>
-                <span className="relative shrink-0 text-right transition-transform duration-500 group-hover:-translate-x-4">
-                  <span className="display block text-3xl transition group-hover:text-creme">
-                    {s.price}
-                  </span>
-                  <span className="text-xs uppercase tracking-[0.14em] text-carvao/50 transition group-hover:text-creme/70">
-                    {s.time}
-                  </span>
-                </span>
-              </button>
-            </li>
+        <div className="flex flex-col gap-14">
+          {BARBER_SERVICE_GROUPS.map((g) => (
+            <div key={g.title}>
+              <h3 data-reveal className="eyebrow mb-4 flex items-center gap-3 text-cobre">
+                <span className="h-px w-8 bg-cobre" />
+                {g.title}
+              </h3>
+              <ul className="border-t border-carvao/15">
+                {g.items.map((s) => (
+                  <li key={s.name} data-reveal>
+                    <button
+                      onClick={() => requestService("barbearia")}
+                      className="group relative flex w-full items-center justify-between gap-6 overflow-hidden border-b border-carvao/15 py-5 text-left"
+                    >
+                      <span className="absolute inset-0 origin-bottom scale-y-0 bg-verde transition-transform duration-500 ease-out group-hover:scale-y-100" />
+                      <span className="relative min-w-0 transition-transform duration-500 group-hover:translate-x-4">
+                        <span className="display block text-2xl transition group-hover:text-creme md:text-[2rem]">
+                          {s.name}
+                        </span>
+                        <span className="mt-1 block max-w-xl text-sm leading-relaxed text-carvao/60 transition group-hover:text-creme/80">
+                          {s.desc}
+                        </span>
+                      </span>
+                      <span className="relative shrink-0 text-right transition-transform duration-500 group-hover:-translate-x-4">
+                        {s.from && (
+                          <span className="block text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-carvao/55 transition group-hover:text-creme/75">
+                            a partir de
+                          </span>
+                        )}
+                        <span className="display block whitespace-nowrap text-2xl transition group-hover:text-creme md:text-3xl">
+                          {s.price}
+                        </span>
+                      </span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );
@@ -205,7 +212,7 @@ export function BarberSection() {
     <div id="barbearia">
       <Marquee
         icons={["clipper", "scissors", "dryer", "razor", "comb", "pole", "brush"]}
-        words={["Barbearia", "Fade", "Tesoura", "Navalha", "Barboterapia", "Sobrancelha", "Barba"]}
+        words={["Barbearia", "Fade", "Tesoura", "Navalha", "Coloração", "Sobrancelha", "Barba"]}
         color="#efe8dc"
         bg="#252622"
       />
