@@ -169,9 +169,9 @@ export const TATTOO_PROCESS = [
 ];
 
 // Fotos reais da barbearia (sem nome do corte), na ordem do carrossel.
-export const HAIRCUT_PHOTOS = Array.from(
-  { length: 15 },
-  (_, i) => `${import.meta.env.BASE_URL}images/cortes/corte-${String(i + 1).padStart(2, "0")}.webp`,
+// Fotos 05, 07, 09, 11, 12, 14 e 15 removidas a pedido do cliente (out/2026).
+export const HAIRCUT_PHOTOS = ["01", "02", "03", "04", "06", "08", "10", "13"].map(
+  (n) => `${import.meta.env.BASE_URL}images/cortes/corte-${n}.webp`,
 );
 
 // Tabela oficial da barbearia (sistema de agendamento do Bartô, out/2026).
